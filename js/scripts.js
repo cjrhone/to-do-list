@@ -3,9 +3,9 @@ function Task(task) {
   this.task = task;
 }
 
-Task.prototype.remove = function() {
- this.remove();
-}
+// Task.prototype.remove = function() {
+//  this.remove();
+// }
 
 
 //use interface logic
@@ -15,13 +15,20 @@ $(document).ready(function() {
     event.preventDefault();
 
   var inputTask = $("input#newTask").val();
-  var newTodo = new Task(inputTask + "!");
+  var newTodo = new Task(inputTask);
 
-  $("ul#taskList").append("<li><span class='addTask'>" + newTodo.task +  "</li></span>");
+  $("ol#taskList").append("<li><span class='addTask'>" + newTodo.task +  "</li></span>");
 
-  $(".addTask").last().click(function() {
-    $()
+  // $(".addTask").click(function() {
+  //   this.remove(); // Remove clicked on text ( but not from list )
+  //
+  // })
+
+
+  $("ol#taskList").children("li").click(function() {
+    $(this).remove();
+  });
 
   })
+
   });
-});
