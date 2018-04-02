@@ -25,8 +25,13 @@ $(document).ready(function() {
   // })
 
 
+
   $("ol#taskList").children("li").click(function() {
-    $(this).remove();
+    $(this).fadeOut();
+    setTimeout(function(){
+      $(this).remove();
+    },2000)
+
   });
 
   })
